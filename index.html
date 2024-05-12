@@ -1,0 +1,79 @@
+<!--
+*******************************************************
+UNICSUL - Universidade Cruzeiro do Sul - Santo Amaro
+Curso: CTS Analise e Desenvolvimento de Sistemas
+Disciplina: Topicos Avançados de SI - I
+Autor: Marco Antonio - Data: 13/05/2024
+Descrição: Projeto A2 - Pizzaria dos Cria
+*******************************************************-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pizzaria dos Cria</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+            body{
+                font-family: quicksand;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                background-color: rgba(45, 143, 234, 0.577);
+            }
+
+            .container{
+                max-width: 600px;
+                margin: 100px auto;
+                padding: 20px;
+                background-color: aliceblue;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1, h2{                
+                color: black;
+                font-family: quicksand;
+            }
+
+            button {
+                padding: 1.3em 3em;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 2.5px;
+                font-weight: 500;
+                color: #000;
+                background-color: #fff;
+                border: none;
+                border-radius: 45px;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                outline: none;
+              }
+              
+              button:hover {
+                background-color: #2c5ca0;
+                box-shadow: 0px 15px 20px rgba(46, 92, 229, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+              }
+              
+              button:active {
+                transform: translateY(-1px);
+              }
+              
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 > Bem vindo a Pizzaria dos Cria</h1>
+            <h2> Conheça nossas deliciosas opções de pizza!</h2>
+            <button onclick="window.location.href='http://localhost:4500/cardapio'">Compre Agora!   </button>
+              
+        </div>
+    </body>
+</html>

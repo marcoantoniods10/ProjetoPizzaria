@@ -1,0 +1,83 @@
+<!--
+*******************************************************
+UNICSUL - Universidade Cruzeiro do Sul - Santo Amaro
+Curso: CTS Analise e Desenvolvimento de Sistemas
+Disciplina: Topicos Avançados de SI - I
+Autor: Marco Antonio - Data: 13/05/2024
+Descrição: Projeto A2 - Pizzaria dos Cria
+*******************************************************-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pedidos</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+            body{
+                font-family: quicksand;
+                text-align: center;
+                margin: 0 auto;
+                padding: 30px;
+                background-color: rgba(45, 143, 234, 0.577);
+                
+            }
+
+            h1, h2{
+                text-align: center;
+                color: rgb(0, 0, 0);
+            }
+
+            table{
+                border-collapse: collapse;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table, th, td{
+                border: 1px solid rgb(255, 255, 255);
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Resumo do Pedido</h1>
+
+        <table>
+            <tr>
+                <th>----------- RESUMO DO PEDIDO -----------</th>
+            </tr>
+            <tr>
+                <td id="pedido-descricao"></td>
+            </tr>
+        </table>
+
+        <h2>Total do Pedido:</h2>
+        <p id="pedido-total">R$ ------</p>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                // Extrair os parametros da URL:
+                const urlParams = new URLSearchParams(window.location.search);
+                const pedidoString = urlParams.get('pedido');
+
+                if(pedidoString){
+                    // Converter a String JSON em objeto JavaScript
+                    const pedidoJSON = JSON.parse(pedidoString);
+
+                    // Atualizar o conteudo da pagina com os detalhes do pedido
+                    const descricaPedidoElement = document.getElementById('pedido-descricao');
+                    descricaPedidoElement.innerHTML = pedidoJSON.descricao;
+
+                    const totalPedidoElement = document.getElementById('pedido-total');
+                    totalPedidoElement.textContent = 'Total do Pedido: R$ ' + pedidoJSON.total;
+                }
+            })
+        </script>
+
+    </body>
+</html>
